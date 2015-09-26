@@ -1,0 +1,8 @@
+Using python's subprocess module,
+we study interprocess communication.
+
+First, we will have a main process fork a subprocess.
+This subprocess loops some task, and after a specified time,
+the main process will signal the subprocess to stop.
+On receiving the stop sig, the subprocess will gracefully terminate and exit.
+
