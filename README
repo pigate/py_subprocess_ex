@@ -6,3 +6,13 @@ This subprocess loops some task, and after a specified time,
 the main process will signal the subprocess to stop.
 On receiving the stop sig, the subprocess will gracefully terminate and exit.
 
+$ python run.py 
+CHILD   3873: Setting up signal handler
+hello   3873
+hello   3873
+hello   3873
+hello   3873
+PARENT	: Signaling child
+CHILD   3873: Received USR1
+
+
