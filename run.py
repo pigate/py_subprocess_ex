@@ -1,5 +1,5 @@
 import subprocess
-
+import sys
 """
 can have processes communicate with each other via pipes
 """
@@ -8,4 +8,9 @@ can have processes communicate with each other via pipes
 #subprocess.call('echo $HOME', shell=True)
 #subprocess.call('echo $$ $BASHPID', shell=True)
 #exit_code = subprocess.call('echo $$', shell=True)
-subprocess.call(['python', 'other.py'])
+proc = subprocess.Popen(['python', 'other.py'])
+time.sleep(5)
+print 'PARENT	: Signaling child'
+sys.stdout.flush()
+os.kill(proc.pid, signal.SIGUSR1)
+
